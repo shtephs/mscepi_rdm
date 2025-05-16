@@ -14,6 +14,7 @@
 
 # Load the tidyverse collection of packages for data manipulation and visualization
 library(tidyverse)
+library(ggplot2)
 
 # Load the haven package to read and work with Stata, SPSS, and SAS data files
 library(haven)
