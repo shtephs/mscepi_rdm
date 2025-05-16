@@ -3,7 +3,7 @@
 # This script is used to clean the data from the National Malaria Indicator     #
 # Survey 2019/2020.                                                             # 
 #                                                                               #
-# Author : S. Zavala and Sumin hahahahah                                                           #
+# Author : S. Zavala and Sumin                                                           #
 # Date   : 2025-15-05                                                           #
 #                                                                               # 
 #################################################################################
