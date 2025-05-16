@@ -3,7 +3,7 @@
 # This script is used to conduct the required analysis using the data from the  #
 # National Malaria Indicator Survey 2019/2020.                                  # 
 #                                                                               #
-# Author : H. Langet                                                            #
+# Author : S. Zavala                                                           #
 # Date   : 2025-15-05                                                           #
 #                                                                               # 
 #################################################################################
