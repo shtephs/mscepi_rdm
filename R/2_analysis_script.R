@@ -37,22 +37,37 @@ household_df <- haven::read_dta("../data/cleanR_household_with_village.dta")
 #################
 
 library(lubridate)
-clean_household_df$month <- floor_date(clean_household_df$date_clean, "month")
+clean_household_df$month <- floor_date(clean_household_df$date_clean, "month") #Date as months
 
 library(ggplot2)
 library(dplyr)
 
+#Groups by month
 monthly_counts <- clean_household_df %>%
   group_by(month) %>%
   summarize(count = n())
 
+#Method 1 WITH CLEANED DATA
 ggplot(monthly_counts, aes(x = month, y = count)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
+  geom_bar(stat = "identity", fill = "lightpink") +
   labs(title = "Household Interviews by Month",
        x = "Month",
        y = "Number of Interviews") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x labels for better readability
+
+#Method 2
+# Method 2: Using base R
+monthly_counts <- aggregate(rep(1, nrow(clean_household_df)) ~ month, clean_household_df, sum)
+colnames(monthly_counts)[2] <- "count"
+
+barplot(monthly_counts$count, 
+        names.arg = format(monthly_counts$month, "%b %Y"),
+        main = "Household Interviews by Month",
+        xlab = "Month", 
+        ylab = "Number of Interviews",
+        col = "blue",
+        las = 2)  # Rotate labels
 
 
 
