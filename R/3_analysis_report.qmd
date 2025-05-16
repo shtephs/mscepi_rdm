@@ -1,6 +1,6 @@
 ---
 title: "RDM homework - Analysis report"
-author: "Helene Langet"
+author: "Stephanie Zavala"
 format: docx
 editor: visual
 ---
@@ -26,14 +26,15 @@ household_df <- haven::read_dta("../data/cleanR_household_with_village.dta")
 # Load the (clean) household-level data 
 # ...
 ```
+
 # About the National Malaria Indicator Survey 2019/2020
 
 Cross-sectional household survey in all 22 provinces of Papua New Guinea.
 
-* 5 randomly sampled villages/province
-* ca. 30 random households/village
-* Structured interviews
-* Finger-prick blood sample for malaria diagnosis by Rapid Diagnostic Test (RDT) and light microscopy
+-   5 randomly sampled villages/province
+-   ca. 30 random households/village
+-   Structured interviews
+-   Finger-prick blood sample for malaria diagnosis by Rapid Diagnostic Test (RDT) and light microscopy
 
 # Shell tables
 
@@ -51,7 +52,7 @@ household_df |>
 
 # Question 1
 
-How many household interviews were conducted per month? 
+How many household interviews were conducted per month?
 
 ```{r}
 count_df <- household_df |>
@@ -62,16 +63,16 @@ count_df
 
 Instructions:
 
-* Step 1: Add color to bars
-* Step 2: Add data labels to the bars
-* Step 3: Adjust the y-axis limits
-* Step 4: Improve x-axis date formatting
-* Step 5: Add labels to the axes
-* Step 6: Highlight year transitions with a vertical line
-* Step 7: Apply a minimal theme
-* Step 8: Customize theme elements for cleaner look
-* Step 9: Add a caption
-* Step 10: Adjust the dimensions of the figure so that its width is twice its height
+-   Step 1: Add color to bars
+-   Step 2: Add data labels to the bars
+-   Step 3: Adjust the y-axis limits
+-   Step 4: Improve x-axis date formatting
+-   Step 5: Add labels to the axes
+-   Step 6: Highlight year transitions with a vertical line
+-   Step 7: Apply a minimal theme
+-   Step 8: Customize theme elements for cleaner look
+-   Step 9: Add a caption
+-   Step 10: Adjust the dimensions of the figure so that its width is twice its height
 
 ```{r}
 count_df |>
