@@ -47,29 +47,43 @@ monthly_counts <- clean_household_df %>%
   group_by(month) %>%
   summarize(count = n())
 
-#Method 1 WITH CLEANED DATA
+#Method 1 with cleaned data
 ggplot(monthly_counts, aes(x = month, y = count)) +
-  geom_bar(stat = "identity", fill = "lightpink") +
+  geom_bar(stat = "identity", fill = "blue") +
   labs(title = "Household Interviews by Month",
        x = "Month",
        y = "Number of Interviews") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x labels for better readability
 
-#Method 2
-# Method 2: Using base R
+
+#Method 2: Using base R
 monthly_counts <- aggregate(rep(1, nrow(clean_household_df)) ~ month, clean_household_df, sum)
 colnames(monthly_counts)[2] <- "count"
 
 barplot(monthly_counts$count, 
         names.arg = format(monthly_counts$month, "%b %Y"),
-        main = "Household Interviews by Month",
-        xlab = "Month", 
-        ylab = "Number of Interviews",
-        col = "blue",
-        las = 2)  # Rotate labels
+       main = "Household Interviews by Month",
+       xlab = "Month", 
+       ylab = "Number of Interviews",
+       col = "blue",
+       las = 2)  # Rotate labels
+
+#M3
+monthly_counts$month <- format(monthly_counts$month, "%b %Y")  # e.g., "Jan 2023"
 
 
+ggplot(monthly_counts, aes(x = month, y = count)) +
+  geom_bar(stat = "identity", fill = "#4A90E2") +  # Changed to a nicer color
+  geom_text(aes(label = count), vjust = -0.5, size = 3) +  # Display counts on bars
+  labs(title = "Household Interviews by Month",
+       x = "Month",
+       y = "Number of Interviews") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(face = "bold", size = 14))
+
+monthly_counts$month <- factor(monthly_counts$month, levels = unique(monthly_counts$month))
 
 #################
 # Shell table 2 #
