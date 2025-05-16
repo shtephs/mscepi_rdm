@@ -2,7 +2,7 @@
 
 Welcome! This GitHub repository has been created for **educational purposes** and is set to public visibility so everyone can access and learn from it.
 
-* Student: Stephanie Zavala
+* Author: Stephanie Zavala
 
 ## Structure
 
